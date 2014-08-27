@@ -31,10 +31,8 @@ exports.show = function(req, res){
 exports.addTask = function(req, res){
   Goal.addTaskById(req.body, req.params.goalId, function(err, goal){
     if(!goal){ 
-      console.log('No goal found.');
       res.redirect('/goal');
     }else {
-      console.log('Goal found, saving to database.');
       res.redirect('/goals/' + req.params.id);  
     }
 

@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-cohort-2014-06-07/life-coach"
+    "url": "https://github.com/kadowki/life-coach"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "David D. Boling <daviddboling@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nss-cohort-2014-06-07/life-coach/issues"
+    "url": "https://github.com/kadowki/life-coach/issues"
   },
-  "homepage": "https://github.com/nss-cohort-2014-06-07/life-coach",
+  "homepage": "https://github.com/kadowki/life-coach",
   "dependencies": {
     "async": "^0.9.0",
     "bcrypt": "^0.8.0",

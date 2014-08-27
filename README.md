@@ -1,32 +1,16 @@
-## name of project
-### Code Badges
-build status icon
-coverage status icon
+## Life Coach
+### Code Badges(to be added soon)
+
 
 ### About
-write a description about your project
-
-### Models
-```
-Model 1
-prop-a
-prop-b
-.classMethod-c
-#instanceMethod-d
-```
-
-```
-Model 2
-prop-e
-prop-f
-.classMethod-g
-#instanceMethod-h
-```
+A life coach program written in Node.js.
 
 ### Features
-- feature 1
-- feature 2
-- feature 3
+- Node.js
+- MongoDB
+- Redis
+- Acceptance testing
+- Unit testing
 
 ### Running Tests
 ```bash
@@ -35,7 +19,7 @@ $ npm test
 ```
 
 ### Contributors
-- [Chyld Medford](https://github.com/chyld)
+- [David D. Boling](https://github.com/kadowki)
 
 ### License
 [MIT](LICENSE)
