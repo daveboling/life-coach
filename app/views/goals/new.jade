@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+    h2 New Goal Page
+    form(method='post' action='/goals')
+      .row
+        .col-xs-4
+        .col-xs-4
+          .form-group
+            label Name
+            input.form-control(type='text' name='name')
+          .form-group
+            label Due
+            input.form-control(type='date' name='date')
+          .form-group
+            label Tags 
+            input.form-control(type='text' name='tags')
+          .form-group
+            button.btn.btn-primary Submit
+        .col-xs-4
+
+
+
+
+block scripts

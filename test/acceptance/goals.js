@@ -2,7 +2,7 @@
 
 'use strict';
 
-process.env.DB   = 'life-coach-test';
+process.env.DB   = 'lifecoach';
 
 var expect  = require('chai').expect,
     cp      = require('child_process'),
@@ -54,5 +54,70 @@ describe('goals', function(){
       });
     });
   });
+
+  describe('post /goals', function(){
+    it('should create a new goal and redirect to goals', function(done){
+      request(app)
+      .post('/goals')
+      .set('cookie', cookie)
+      .send('name=stuff&date=2010-10-10&tags=stuff%2C+stuff%2C+stuff')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
+  describe('get /goals', function(){
+    it('should fetch the goals page', function(done){
+      request(app)
+      .get('/goals')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('Doctor');
+        done();
+      });
+    });
+  });
+
+  describe('get /goals/3', function(){
+    it('should fetch a specific goal page', function(done){
+      request(app)
+      .get('/goals/100000000000000000000000')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('Doctor');
+        done();
+      });
+    });
+
+    it('should find goal by goalID', function(done){
+      request(app)
+      .get('/goals/200000000000000000000000')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
+  describe('get /goals/3', function(){
+    it('should fetch a specific goal page', function(done){
+      request(app)
+      .post('/goals/100000000000000000000000/tasks')
+      .set('cookie', cookie)
+      .send('name=test&description=test&rank=124')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
+
+
 });
 

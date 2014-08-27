@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+      h2 Show Page
+      p= goal.name
+
+      form(role='form' method='post' action='/goals/#{goal._id}/tasks')
+        .row
+          .col-xs-4
+          .col-xs-4
+            .form-group
+              label Name
+              input.form-control#name(type='text' name='name')
+              label Description
+              textarea.form-control#description(name='description')
+              label Difficulty
+              select.form-control#difficulty
+                option Easy
+                option Medium
+                option Hard
+              label Rank
+              input.form-control#rank(type='number' name='rank')
+            button.btn.btn-primary(type='submit') Submit
+          .col-xs-4
+

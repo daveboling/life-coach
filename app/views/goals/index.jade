@@ -1,0 +1,13 @@
+extends ../shared/template
+block content
+    h2 #{user.email} Goal Page
+
+    table.table
+      th Goal
+      th Due
+      th Tags
+        each goal in goals
+          tr
+            td: a(href='/goals/#{goal._id}')= goal.name
+            td= goal.date
+            td= goal.tags
